@@ -1,13 +1,17 @@
+import json
+
 import pytest
 
 from Pages.LoginPage import LoginPage
 
+def get_smoke_login_data():
+    with open("testdata/smoke_login_data.json", "r") as f:
+        data = json.load(f)
+        user = data["valid_user"]
+        return[(user["username"], user["password"])]
 
 @pytest.mark.smoke
-@pytest.mark.parametrize("username, password",
-    [
-        ("Admin", "admin123")
-    ])
+@pytest.mark.parametrize("username, password", get_smoke_login_data())
 def test_login_valid_credentials(browser_instance, username, password):
     driver = browser_instance
     login_page = LoginPage(driver)

@@ -1,0 +1,28 @@
+{
+  "scenarios" : [
+    {
+      "scenario" : "valid_login",
+      "username" : "Admin",
+      "password" : "admin123",
+      "exp_res" : "success"
+    },
+    {
+      "scenario" : "invalid_password",
+      "username" : "Admin",
+      "password" : "wrongpass",
+      "exp_res" : "failure"
+    },
+    {
+      "scenario" : "invalid_username",
+      "username" : "wrongUser",
+      "password" : "admin123",
+      "exp_res" : "failure"
+    },
+    {
+      "scenario" : "empty_credentials",
+      "username" : "",
+      "password" : "",
+      "exp_res" : "failure"
+    }
+  ]
+}
