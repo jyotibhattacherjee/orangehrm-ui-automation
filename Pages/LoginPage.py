@@ -1,17 +1,13 @@
 from selenium.webdriver.common.by import By
 
+from Pages.BasePage import BasePage
 
-from Utilities.wait_utils import WaitUtils
 
-
-class LoginPage:
+class LoginPage(BasePage):
     def __init__(self, driver):
-        self.driver = driver
-        self.wait = WaitUtils(driver)
-        #self.wait= WebDriverWait(driver, 10)
+        super().__init__(driver)
         self.username_input = (By.NAME, "username")
         self.password_input = (By.NAME, "password")
-        #self.wait.until(expected_conditions.presence_of_element_located(self.username_input))
         self.loginButton = (By.XPATH, "//button[@type='submit']")
 
     def login(self, username, password):

@@ -1,6 +1,8 @@
 import json
 
-with open("../testdata/regression_login_data.json", "r") as f:
+from Utilities.path_utils import TESTDATA_DIR
+
+with open(TESTDATA_DIR/"regression_login_data.json", "r") as f:
     data = json.load(f)
     scenarios = data["scenarios"]
     for scenario in scenarios:

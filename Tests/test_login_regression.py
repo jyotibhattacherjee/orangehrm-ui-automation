@@ -3,9 +3,11 @@ import json
 import pytest
 
 from Pages.LoginPage import LoginPage
+from Utilities.path_utils import TESTDATA_DIR
+
 
 def get_regression_login_data():
-    with open("testdata/regression_login_data.json", "r") as f:
+    with open(TESTDATA_DIR/"regression_login_data.json", "r") as f:
         data = json.load(f)
         scenarios = data["scenarios"]
 

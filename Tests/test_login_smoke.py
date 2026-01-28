@@ -3,9 +3,11 @@ import json
 import pytest
 
 from Pages.LoginPage import LoginPage
+from Utilities.path_utils import TESTDATA_DIR
+
 
 def get_smoke_login_data():
-    with open("testdata/smoke_login_data.json", "r") as f:
+    with open(TESTDATA_DIR/"smoke_login_data.json", "r") as f:
         data = json.load(f)
         user = data["valid_user"]
         return[(user["username"], user["password"])]
