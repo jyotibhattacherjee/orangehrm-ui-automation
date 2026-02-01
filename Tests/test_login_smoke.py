@@ -2,6 +2,7 @@ import json
 
 import pytest
 
+from Pages.DashboardPage import DashboardPage
 from Pages.LoginPage import LoginPage
 from Utilities.path_utils import TESTDATA_DIR
 
@@ -18,5 +19,5 @@ def test_login_valid_credentials(browser_instance, username, password):
     driver = browser_instance
     login_page = LoginPage(driver)
     login_page.login(username, password)
-    url = driver.current_url
-    assert "dashboard" in url
+    dashboard_page = DashboardPage(driver)
+    assert dashboard_page.is_dashboard_visible()
