@@ -15,5 +15,6 @@ class BaseTest:
 
         self.dashboard_page = DashboardPage(self.driver)
         assert self.dashboard_page.is_dashboard_visible()
+        assert self.dashboard_page.is_dashboard_visible()
 
 

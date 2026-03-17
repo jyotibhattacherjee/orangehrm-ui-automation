@@ -21,3 +21,4 @@ def test_login_valid_credentials(browser_instance, username, password):
     login_page.login(username, password)
     dashboard_page = DashboardPage(driver)
     assert dashboard_page.is_dashboard_visible()
+    assert dashboard_page.is_side_menu_visible()

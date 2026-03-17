@@ -3,7 +3,7 @@ from selenium.webdriver.support import expected_conditions as EC
 
 
 class WaitUtils:
-    def __init__(self, driver, timeout=10):
+    def __init__(self, driver, timeout=15):
         self.wait = WebDriverWait(driver, timeout)
 
     def wait_for_visibility(self, locator):

@@ -13,7 +13,7 @@ class LoginPage(BasePage):
     def login(self, username, password):
         self.wait.wait_for_visibility(self.username_input).send_keys(username)
         self.wait.wait_for_visibility(self.password_input).send_keys(password)
-        self.wait.wait_for_visibility(self.loginButton).click()
+        self.wait.wait_for_clickable(self.loginButton).click()
 
 
 

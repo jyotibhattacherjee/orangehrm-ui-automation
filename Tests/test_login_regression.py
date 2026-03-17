@@ -28,4 +28,4 @@ def test_login_valid_credentials(browser_instance, username, password, exp_res):
         assert dashboard_page.is_dashboard_visible()
         assert dashboard_page.is_side_menu_visible()
     else:
-        assert "dashboard" not in url
+        assert "auth/login" not in driver.current_url
