@@ -31,6 +31,7 @@ class PimPage(BasePage):
 
     def click_save_button(self):
         self.wait.wait_for_clickable(self.save_button).click()
+        self.wait.wait_for_visibility(self.personal_details_header)
 
     def is_personal_details_page_displayed(self):
         element = self.wait.wait_for_visibility(self.personal_details_header)
